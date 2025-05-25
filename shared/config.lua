@@ -6,10 +6,6 @@ Config = {}
 --                                                           --
 ---------------------------------------------------------------
 
---This is how the version check will be displayed in the server console
---Full = 0 [Default] | Simple = 1 | Disabled = 2
-Config.VersionChecker = 0
-
 --This is how you open the menu either via a command or button
 --Button = 0 [Default]  |  Command = 1
 Config.OpenMenu = 0
@@ -101,7 +97,7 @@ Config.Props = {
 --This sets who can access the LEO menu
 --!!! NOTE: If LEO Peds is selected then onlys peds from the Config.LEOUniforms will have access to the menu
 --Disabled = 0 | Everyone = 1 [Default]  |  LEO Peds = 2  |  Onduty Command = 3  |  Ace Permissions = 4
-Config.LEOAccess = 1
+Config.LEOAccess = 4
 
 --This determines if the radar button will be displayed
 --NOTE: Wraith Radar is the ONLY radar script that works with the menu at the moment (This also includes any editied version) - Both his old and new radar are compatiable, link below
