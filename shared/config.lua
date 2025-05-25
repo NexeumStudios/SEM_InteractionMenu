@@ -27,8 +27,8 @@ Config.Command = 'semmenu'
 Config.MenuWidth = 80
 
 --This is the position of the menu when open
---Left = 0 [Default]  |  Right = 1
-Config.MenuOrientation = 0
+--Left = 0  |  Right = 1 [Default]
+Config.MenuOrientation = 1
 
 --This is the title of the menu dispalyed
 --Default       = The default title of the menu is 'Interaction Menu'
