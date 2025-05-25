@@ -1,16 +1,3 @@
---[[
-───────────────────────────────────────────────────────────────
-
-	SEM_InteractionMenu (config.lua) - Created by Scott M
-	Current Version: v1.7.1 (Sep 2021)
-	
-	Support: https://semdevelopment.com/discord
-
-───────────────────────────────────────────────────────────────
-]]
-
-
-
 Config = {}
 
 

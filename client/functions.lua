@@ -1,19 +1,3 @@
---[[
-─────────────────────────────────────────────────────────────────
-
-	SEM_InteractionMenu (functions.lua) - Created by Scott M
-	Current Version: v1.7.1 (Sep 2021)
-	
-	Support: https://semdevelopment.com/discord
-	
-		!!! Change vaules in the 'config.lua' !!!
-	DO NOT EDIT THIS IF YOU DON'T KNOW WHAT YOU ARE DOING
-
-─────────────────────────────────────────────────────────────────
-]]
-
-
-
 --General Functions
 function Notify(Text)
     SetNotificationTextEntry('STRING')

@@ -1,19 +1,3 @@
---[[
-───────────────────────────────────────────────────────────────
-
-	SEM_InteractionMenu (server.lua) - Created by Scott M
-	Current Version: v1.7.1 (Sep 2021)
-	
-	Support: https://semdevelopment.com/discord
-	
-		!!! Change vaules in the 'config.lua' !!!
-	DO NOT EDIT THIS IF YOU DON'T KNOW WHAT YOU ARE DOING
-	
-───────────────────────────────────────────────────────────────
-]]
-
-
-
 RegisterServerEvent('SEM_InteractionMenu:GlobalChat')
 AddEventHandler('SEM_InteractionMenu:GlobalChat', function(Color, Prefix, Message)
 	TriggerClientEvent('chatMessage', -1, Prefix, Color, Message)
