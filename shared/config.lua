@@ -1,7 +1,5 @@
 Config = {}
 
-
-
 ---------------------------------------------------------------
 --                                                           --
 --                      Menu Features                        --
@@ -41,22 +39,6 @@ Config.MenuTitle = 0
 
 --This is the custom title you can set for the menu (If chosen at Config.MenuTitle)
 Config.MenuTitleCustom = 'Custom Menu Title'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---------------------------------------------------------------
 --                                                           --
@@ -109,22 +91,6 @@ Config.Props = {
     {name = 'Lighting', spawncode = 'prop_worklight_03b'},
     {name = 'Tent', spawncode = 'prop_gazebo_02'},
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---------------------------------------------------------------
 --                                                           --
@@ -298,22 +264,6 @@ Config.LEOVehiclesCategories = {
 --This determines if the ai traffic manager will can accessible
 Config.DisplayTrafficManager = true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---------------------------------------------------------------
 --                                                           --
 --                       Fire Features                       --
@@ -407,22 +357,6 @@ Config.FireVehicles = {
 	{name = 'Ambulance', spawncode = 'ambulance'},
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---------------------------------------------------------------
 --                                                           --
 --                     Civilian Features                     --
@@ -502,22 +436,6 @@ Config.CivAdverts = {
     {name = 'YouTube', loc = 'CHAR_YOUTUBE', file = 'CHAR_YOUTUBE'},
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---------------------------------------------------------------
 --                                                           --
 --                      Vehicle Features                     --
@@ -530,22 +448,6 @@ Config.VehicleAccess = 1
 
 --This determines if the vehicle options are avaiable, these include: Fix, Clean, Delete
 Config.VehicleOptions = true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---------------------------------------------------------------
 --                                                           --

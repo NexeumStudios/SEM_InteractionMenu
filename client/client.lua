@@ -64,8 +64,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
-
 --Dragging Event
 local Drag = false
 local OfficerDrag = -1
@@ -95,8 +93,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-
-
 --Force Seat Player Event
 RegisterNetEvent('SEM_InteractionMenu:Seat')
 AddEventHandler('SEM_InteractionMenu:Seat', function(Veh)
@@ -109,8 +105,6 @@ AddEventHandler('SEM_InteractionMenu:Seat', function(Veh)
 	end
 end)
 
-
-
 --Force Unseat Player Event
 RegisterNetEvent('SEM_InteractionMenu:Unseat')
 AddEventHandler('SEM_InteractionMenu:Unseat', function(ID)
@@ -122,8 +116,6 @@ AddEventHandler('SEM_InteractionMenu:Unseat', function(ID)
 
     SetEntityCoords(PlayerPedId(), X, Y, PlayerPos.z)
 end)
-
-
 
 --Spike Strip Spawn Event
 local SpawnedSpikes = {}
@@ -199,8 +191,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-
-
 --Backup
 RegisterNetEvent('SEM_InteractionMenu:CallBackup')
 AddEventHandler('SEM_InteractionMenu:CallBackup', function(Code, StreetName, Coords)
@@ -244,8 +234,6 @@ AddEventHandler('SEM_InteractionMenu:CallBackup', function(Code, StreetName, Coo
         end
     end
 end)
-
-
 
 --Jail
 CurrentlyJailed = false
@@ -318,8 +306,6 @@ AddEventHandler('SEM_InteractionMenu:UnjailPlayer', function()
     EarlyRelease = true
 end)
 
-
-
 --Toggle LEO Weapons
 CarbineEquipped = false
 ShotgunEquipped = false
@@ -352,15 +338,11 @@ Citizen.CreateThread(function()
     end
 end)
 
-
-
 --Civilian Adverts
 RegisterNetEvent('SEM_InteractionMenu:SyncAds')
 AddEventHandler('SEM_InteractionMenu:SyncAds',function(Text, Name, Loc, File, ID)
     Ad(Text, Name, Loc, File, ID)
 end)
-
-
 
 --Inventory
 RegisterNetEvent('SEM_InteractionMenu:InventoryResult')
@@ -373,8 +355,6 @@ AddEventHandler('SEM_InteractionMenu:InventoryResult', function(Inventory)
 
     Notify('~b~Inventory Items: ~g~' .. Inventory)
 end)
-
-
 
 --BAC
 RegisterNetEvent('SEM_InteractionMenu:BACResult')
@@ -391,9 +371,6 @@ AddEventHandler('SEM_InteractionMenu:BACResult', function(BACLevel)
         Notify('~b~BAC Level: ~r~' .. tostring(BACLevel))
     end
 end)
-
-
-
 
 --Hospital
 CurrentlyHospitalized = false
@@ -466,8 +443,6 @@ AddEventHandler('SEM_InteractionMenu:UnhospitalizePlayer', function()
     EarlyDischarge = true
 end)
 
-
-
 --Station Blips
 Citizen.CreateThread(function()
     if Config.DisplayStationBlips then
@@ -519,8 +494,6 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
-
 
 --Commands
 Citizen.CreateThread(function()

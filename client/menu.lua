@@ -7,13 +7,8 @@ else
     MenuOri = 0
 end
 
-
 _MenuPool = NativeUI.CreatePool()
 MainMenu = NativeUI.CreateMenu()
-
-
-
-
 
 function Menu()
     local MenuTitle = ''
@@ -27,8 +22,6 @@ function Menu()
         MenuTitle = 'Interaction Menu'
     end
 
-
-
 	_MenuPool:Remove()
 	_MenuPool = NativeUI.CreatePool()
 	MainMenu = NativeUI.CreateMenu(MenuTitle, GetResourceMetadata(GetCurrentResourceName(), 'title', 0) .. ' ~y~' .. GetResourceMetadata(GetCurrentResourceName(), 'version', 0), MenuOri)
@@ -39,10 +32,6 @@ function Menu()
 	MainMenu:SetMenuWidthOffset(Config.MenuWidth)	
 	_MenuPool:ControlDisablingEnabled(false)
 	_MenuPool:MouseControlsEnabled(false)
-
-
-
-
 
     if LEORestrict() then
         local LEOMenu = _MenuPool:AddSubMenu(MainMenu, 'LEO Toolbox', 'Law Enforcement Related Menu', true)
@@ -465,9 +454,6 @@ function Menu()
             end
     end
 
-
-
-
     if FireRestrict() then
         local FireMenu = _MenuPool:AddSubMenu(MainMenu, 'Fire Toolbox', 'Fire Related Menu', true)
         FireMenu:SetMenuWidthOffset(Config.MenuWidth)
@@ -678,9 +664,6 @@ function Menu()
             end
     end
 
-
-
-
     if CivRestrict() then
         local CivMenu = _MenuPool:AddSubMenu(MainMenu, 'Civ Toolbox', 'Civilian Related Menu', true)
         CivMenu:SetMenuWidthOffset(Config.MenuWidth)
@@ -789,10 +772,6 @@ function Menu()
                 end
             end
     end
-
-
-
-
 
     if VehicleRestrict() then
         local VehicleMenu = _MenuPool:AddSubMenu(MainMenu, 'Vehicle', 'Vehicle Related Menu', true)
@@ -1017,10 +996,6 @@ function Menu()
             end
     end
 
-
-
-        
-
     if EmoteRestrict() then
         local EmotesList = {}
         for _, Emote in pairs(Config.EmotesList) do
@@ -1030,23 +1005,19 @@ function Menu()
         local EmotesMenu = NativeUI.CreateListItem('Emotes', EmotesList, 1, 'General RP Emotes')
         MainMenu:AddItem(EmotesMenu)
             
-            MainMenu.OnListSelect = function(sender, item, index)
-                if item == EmotesMenu then
-                    for _, Emote in pairs(Config.EmotesList) do
-                        if Emote.name == item:IndexToItem(index) then
-                            PlayEmote(Emote.emote, Emote.name)
-                        end
+        MainMenu.OnListSelect = function(sender, item, index)
+            if item == EmotesMenu then
+                for _, Emote in pairs(Config.EmotesList) do
+                    if Emote.name == item:IndexToItem(index) then
+                        PlayEmote(Emote.emote, Emote.name)
                     end
                 end
             end
+        end
     end
-        
-
 
     _MenuPool:RefreshIndex()
 end
-
-
 
 Citizen.CreateThread(function()
 	while true do
@@ -1055,7 +1026,7 @@ Citizen.CreateThread(function()
 		_MenuPool:ProcessMenus()	
 		_MenuPool:ControlDisablingEnabled(false)
 		_MenuPool:MouseControlsEnabled(false)
-		
+
 		if IsControlJustPressed(1, Config.MenuButton) and GetLastInputMethod(2) then
             TriggerServerEvent("sem:server:fetch_permissions", permissions)
 
@@ -1070,8 +1041,6 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-
-
 
 RegisterCommand(Config.Command, function(source, args, rawCommands)
     if Config.OpenMenu == 1 then

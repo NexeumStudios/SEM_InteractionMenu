@@ -152,8 +152,6 @@ function DisableShield()
     ShieldActive = false
 end
 
-
-
 --Civ Functions
 function Ad(Text, Name, Loc, File, ID)
     SetNotificationTextEntry('STRING')
@@ -161,8 +159,6 @@ function Ad(Text, Name, Loc, File, ID)
     EndTextCommandThefeedPostMessagetext(Loc, File, true, 1, Name, '~b~Advertisement #' .. ID)
     DrawNotification(false, true)
 end
-
-
 
 --Vehicle Functions
 function SpawnVehicle(Veh, Name, Livery, Extras)
@@ -226,8 +222,6 @@ function DeleteVehicle(entity)
     Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized(entity))
 end
 
-
-
 --Ped Functions
 function LoadPed(Hash)
     Citizen.CreateThread(function()
@@ -246,8 +240,6 @@ function LoadPed(Hash)
     end)
 end
 
-
-
 --Weapon Functions
 function GiveWeapon(Hash)
     GiveWeaponToPed(GetPlayerPed(-1), GetHashKey(Hash), 999, false)
@@ -258,8 +250,6 @@ function AddWeaponComponent(WeaponHash, Component)
         GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(WeaponHash), GetHashKey(Component))
     end
 end
-
-
 
 --Prop Functions
 function SpawnProp(Object, Name)
@@ -338,8 +328,6 @@ function DeleteEntity(Entity)
 	Citizen.InvokeNative(0xAE3CBE5BF394C9C9, Citizen.PointerValueIntInitialized(Entity))
 end
 
-
-
 --Emote Functions
 function PlayEmote(Emote, Name)
     if not DoesEntityExist(GetPlayerPed(-1)) then
@@ -361,12 +349,6 @@ function CancelEmote()
     Notify('~r~Stopping Emote')
     EmotePlaying = false
 end
-
-
-
-
-
-
 
 --Menu Restrictions
 function LEORestrict()
@@ -393,8 +375,6 @@ function LEORestrict()
     end
 end
 
-
-
 function FireRestrict()
     if Config.FireAccess == 0 then
         return false
@@ -419,8 +399,6 @@ function FireRestrict()
     end
 end
 
-
-
 function CivRestrict()
     if Config.CivAccess == 0 then
         return false
@@ -430,8 +408,6 @@ function CivRestrict()
         return true
     end
 end
-
-
 
 function VehicleRestrict()
     if Config.VehicleAccess == 0 then
@@ -448,8 +424,6 @@ function VehicleRestrict()
         return true
     end
 end
-
-
 
 function EmoteRestrict()
     if Config.EmoteAccess == 0 then
