@@ -128,42 +128,15 @@ AddEventHandler('SEM_InteractionMenu:Unhospitalize', function(ID)
 	TriggerClientEvent('SEM_InteractionMenu:UnhospitalizePlayer', ID)
 end)
 
-RegisterServerEvent('SEM_InteractionMenu:LEOPerms')
-AddEventHandler('SEM_InteractionMenu:LEOPerms', function()
-    if IsPlayerAceAllowed(source, 'sem_intmenu.leo') then
-		TriggerClientEvent('SEM_InteractionMenu:LEOPermsResult', source, true)
-	else
-		TriggerClientEvent('SEM_InteractionMenu:LEOPermsResult', source, false)
-	end
-end)
+RegisterServerEvent("sem:server:fetch_permissions")
+AddEventHandler("sem:server:fetch_permissions", function(permissions)
+    for key, _ in pairs(permissions) do
+        local permission = "sem_intmenu." .. key:lower()
+        local has_permission = IsPlayerAceAllowed(source, permission)
 
-RegisterServerEvent('SEM_InteractionMenu:FirePerms')
-AddEventHandler('SEM_InteractionMenu:FirePerms', function()
-    if IsPlayerAceAllowed(source, 'sem_intmenu.fire') then
-		TriggerClientEvent('SEM_InteractionMenu:FirePermsResult', source, true)
-	else
-		TriggerClientEvent('SEM_InteractionMenu:FirePermsResult', source, false)
-	end
+        TriggerClientEvent("sem:client:update_permissions", source, key, has_permission)
+    end
 end)
-
-RegisterServerEvent('SEM_InteractionMenu:UnjailPerms')
-AddEventHandler('SEM_InteractionMenu:UnjailPerms', function()
-    if IsPlayerAceAllowed(source, 'sem_intmenu.unjail') then
-		TriggerClientEvent('SEM_InteractionMenu:UnjailPermsResult', source, true)
-	else
-		TriggerClientEvent('SEM_InteractionMenu:UnjailPermsResult', source, false)
-	end
-end)
-
-RegisterServerEvent('SEM_InteractionMenu:UnhospitalPerms')
-AddEventHandler('SEM_InteractionMenu:UnhospitalPerms', function()
-    if IsPlayerAceAllowed(source, 'sem_intmenu.unhospital') then
-		TriggerClientEvent('SEM_InteractionMenu:UnhospitalPermsResult', source, true)
-	else
-		TriggerClientEvent('SEM_InteractionMenu:UnhospitalPermsResult', source, false)
-	end
-end)
-
 
 local resourceName = 
 [[^3

@@ -81,7 +81,7 @@ function Menu()
                 LEOActions:AddItem(BAC)
 				if Config.LEOJail then
                     LEOActions:AddItem(Jail)
-                    if UnjailAllowed then
+                    if permissions["UNJAIL"] then
                         LEOActions:AddItem(Unjail)
                     end
 				end
@@ -529,7 +529,7 @@ function Menu()
                             end
                         end
                     local Unhospitalize = NativeUI.CreateItem('Unhospitalize', 'Unhospitalize a player')
-                    if UnhospitalAllowed then
+                    if permissions["UNHOSPITAL"] then
                         FireActions:AddItem(Unhospitalize)
                     end
                     Unhospitalize.Activated = function(ParentMenu, SelectedItem)
@@ -1057,6 +1057,10 @@ Citizen.CreateThread(function()
 		_MenuPool:MouseControlsEnabled(false)
 		
 		if IsControlJustPressed(1, Config.MenuButton) and GetLastInputMethod(2) then
+            TriggerServerEvent("sem:server:fetch_permissions", permissions)
+
+            -- very important 100ms to provide the server event ^ to fetch and update permissions before showing the menu!
+            Citizen.Wait(100)
 			if not menuOpen then
 				Menu()
                 MainMenu:Visible(true)

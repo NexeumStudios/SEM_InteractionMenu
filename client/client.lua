@@ -1,4 +1,15 @@
+-- new dynamic permissions system, permissions are checked every time the menu is open, compared to on load, nothing needs touching here
+permissions = {
+    LEO = false,
+    FIRE = false,
+    UNJAIL = false,
+    UNHOSPITAL = false,
+}
 
+RegisterNetEvent("sem:client:update_permissions")
+AddEventHandler("sem:client:update_permissions", function(access, result)
+    permissions[access] = result
+end)
 
 --Cuffing Event
 local isCuffed = false
@@ -490,55 +501,6 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
-
-
---Permissions
-LEOAce = false
-TriggerServerEvent('SEM_InteractionMenu:LEOPerms')
-RegisterNetEvent('SEM_InteractionMenu:LEOPermsResult')
-AddEventHandler('SEM_InteractionMenu:LEOPermsResult', function(Allowed)
-    if Allowed then
-        LEOAce = true
-    else
-        LEOAce = false
-    end
-end)
-
-FireAce = false
-TriggerServerEvent('SEM_InteractionMenu:FirePerms')
-RegisterNetEvent('SEM_InteractionMenu:FirePermsResult')
-AddEventHandler('SEM_InteractionMenu:FirePermsResult', function(Allowed)
-    if Allowed then
-        FireAce = true
-    else
-        FireAce = false
-    end
-end)
-
-UnjailAllowed = false
-TriggerServerEvent('SEM_InteractionMenu:UnjailPerms')
-RegisterNetEvent('SEM_InteractionMenu:UnjailPermsResult')
-AddEventHandler('SEM_InteractionMenu:UnjailPermsResult', function(Allowed)
-    if Allowed then
-        UnjailAllowed = true
-    else
-        UnjailAllowed = false
-    end
-end)
-
-UnhospitalAllowed = false
-TriggerServerEvent('SEM_InteractionMenu:UnhospitalPerms')
-RegisterNetEvent('SEM_InteractionMenu:UnhospitalPermsResult')
-AddEventHandler('SEM_InteractionMenu:UnhospitalPermsResult', function(Allowed)
-    if Allowed then
-        UnhospitalAllowed = true
-    else
-        UnhospitalAllowed = false
-    end
-end)
-
-
 
 --Emote
 Citizen.CreateThread(function()

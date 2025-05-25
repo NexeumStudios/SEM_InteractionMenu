@@ -387,7 +387,7 @@ function LEORestrict()
     elseif Config.LEOAccess == 3 then
         return LEOOnduty
     elseif Config.LEOAccess == 4 then
-        return LEOAce
+        return permissions["LEO"]
     else
         return true
     end
@@ -413,7 +413,7 @@ function FireRestrict()
     elseif Config.FireAccess == 3 then
         return FireOnduty
     elseif Config.FireAccess == 4 then
-        return FireAce
+        return permissions["FIRE"]
     else
         return true
     end
