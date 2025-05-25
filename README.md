@@ -1,30 +1,9 @@
-[![Discord](https://semdevelopment.com/img/discord.png)](https://semdevelopment.com/discord)
+# SEM_InteractionMenu, forked by Nexeum Studios
 
-# SEM_InteractionMenu
-*Multi Purpose FiveM Interaction Menu*
+If your server requires dynamic permission checking for a duty system, this version of SEM_InteractionMenu contains dynamic permission checking, so permissions are checked each time the menu is opened, instead of when the script is initially loaded.
 
-This resource is a menu with actions for LEO, Fire and Civ including Vehicle Controls and Emotes!
+It, in theory, works with every duty script that dynamically adds and removes permissions from a player. If you are looking for an advanced duty system, we recommend checking our our nex-duty script [here](https://forum.cfx.re/t/advanced-duty-system-for-vmenu-servers/5324425).
 
-Each section has features that would be used by each of the professions, for example the LEO Menu has Cuff, Drag, Seat, etc.
-Some menu features also have commands out of ease during RP.
+If you have any issues with the script, reach out to us [here](https://discord.nexeumstudios.com)
 
-SEM_InteractionMenu was created using NativeUI [LUA]
-
-
-### Information:
-Current Version: **v1.7.1**
-
-Changes: **• Fixes menu item skipping**
-
-**THIS UPDATE *ONLY* AFFECTS THE DEPENDENCY NATIVEUI - YOU CAN JUST UPDATE THAT FILE *(NO OTHER FILES WERE CHANGED!)***
-
-
-### Links:
-
-Support/Discord: [Click Here](https://semdevelopment.com/discord)
-
-Information: [Click Here](https://semdevelopment.com/releases/interactionmenu)
-
-Instruction/Docs: [Click here](https://semdevelopment.com/releases/interactionmenu/docs)
-
-*For full changes checkout [here](https://semdevelopment.com/releases/interactionmenu/docs/changelog)*
+The original, untouched SEM_InteractionMenu script can be found [here](https://github.com/Sc0ttM/SEM_InteractionMenu) and the original documentation can be found [here](https://semdevelopment.com/releases/interactionmenu/docs/)
